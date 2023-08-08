@@ -1,30 +1,28 @@
 {
-  "name": "electron-quick-start-typescript",
-  "version": "1.0.0",
-  "description": "A minimal Electron application written with Typescript",
+  "name": "Chatty McChatface",
+  "version": "0.0.1",
+  "description": "Get chatty",
+  "main": "main.js",
   "scripts": {
     "build": "tsc",
+    "postbuild": "cp ./public/* ./dist/ && cp ./package.json ./dist/",
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
-    "start": "npm run build && electron ./dist/main.js"
+    "prestart": "npm run build",
+    "start": "electron ./dist/main.js",
+    "prepackage": "npm run build",
+    "package": "electron-packager ./dist/ --overwrite --icon ./public/chatty.icns"
   },
-  "repository": "https://github.com/electron/electron-quick-start-typescript",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo",
-    "typescript"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "repository": "https://github.com/stabai/chatty",
+  "author": "Shawn Tabai",
+  "license": "MIT",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
-    "electron": "^18.2.3",
+    "electron": "^21.2.0",
+    "electron-packager": "^17.0.0",
     "eslint": "^7.32.0",
-    "typescript": "^4.7.2"
-  },
-  "dependencies": {}
+    "keyv": "^4.5.0",
+    "typescript": "^4.8.4"
+  }
 }

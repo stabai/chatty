@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://ssl.gstatic.com">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Chatty McChatface</title>
+  </head>
+  <body>
+    <div id="chatbar">
+      <button class="client-button" data-client-id="gchat">GChat <label class="count"></label></button>
+      <button class="client-button" data-client-id="slack">Slack <label class="count"></label></button>
+      <button class="client-button" data-client-id="discord">Discord <label class="count"></label></button>
+      <button class="client-button" data-client-id="gmessages">GMessages <label class="count"></label></button>
+      <button class="client-button" data-client-id="whatsapp">WhatsApp <label class="count"></label></button>
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+/* styles.css */
+
+/* Add styles here to customize the appearance of your app */
+html, body {
+  background: #1f2123;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 84px;
+  height: 100%;
+  overflow: hidden;
+}
+
+#chatbar {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  border-right: solid 1px #3b3c3f;
+}
+
+#chatbar .client-button {
+  transition: all 200ms;
+  border: solid 1px transparent;
+  background-color: darkslategrey;
+  width: 46px;
+  height: 56px;
+  border-radius: 32px;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  opacity: 0.6;
+  box-sizing: content-box;
+}
+
+#chatbar .client-button:hover,
+#chatbar .client-button.active {
+  opacity: 1;
+  border-color: #3b3c3f;
+}
+#chatbar .client-button.active {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right-color: transparent;
+  padding-right: 20px;
+  margin-left: 10px;
+}
+
+#chatbar .client-button[data-client-id=gchat] {
+  background-image: url(gchat_64.png);
+  background-size: 40px;
+  color: transparent;
+}
+#chatbar .client-button[data-client-id=slack] {
+  background-color: #531754;
+  background-image: url(slack_256.png);
+  color: transparent;
+}
+#chatbar .client-button[data-client-id=discord] {
+  background-color: #5865f2;
+  background-image: url(discord.ico);
+  color: transparent;
+}
+#chatbar .client-button[data-client-id=gmessages] {
+  background-color: #1b72e8;
+  background-image: url(gmessages_96.png);
+  color: transparent;
+}
+#chatbar .client-button[data-client-id=whatsapp] {
+  background-color: #1cd741;
+  background-image: url(whatsapp_256.png);
+  background-size: 50px;
+  color: transparent;
+}
+
+#chatbar .client-button label.count {
+  color: white;
+  background: red;
+  border-radius: 50%;
+  padding: 3px;
+  font-size: 10px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+}
+#chatbar .client-button label.count:empty {
+  visibility: hidden;
+}
